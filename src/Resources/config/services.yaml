@@ -1,0 +1,14 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  Tourze\DoctrineSnapshotBundle\EventListener\SnapshotListener:
+    tags:
+      - { name: doctrine.event_listener, event: prePersist }
+      - { name: doctrine.event_listener, event: preUpdate }
+
+  Tourze\DoctrineSnapshotBundle\Service\SnapshotManager:
+    public: true
+
+  Tourze\DoctrineSnapshotBundle\Repository\SnapshotRepository:

@@ -1,0 +1,4 @@
+services:
+    Tourze\DoctrineSnapshotBundle\DataFixtures\:
+        resource: '../../DataFixtures/'
+        tags: ['doctrine.fixture.orm']
