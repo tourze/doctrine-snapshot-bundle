@@ -1,6 +1,6 @@
 {
   "name": "tourze/doctrine-snapshot-bundle",
-  "description": "",
+  "description": "A Symfony bundle that provides snapshot functionality for Doctrine entities with data integrity, event system, and flexible storage options.",
   "type": "symfony-bundle",
   "license": "MIT",
   "require": {
