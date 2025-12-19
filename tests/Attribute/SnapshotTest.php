@@ -6,7 +6,7 @@ namespace Tourze\DoctrineSnapshotBundle\Tests\Attribute;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Attribute\Groups;
 use Tourze\DoctrineSnapshotBundle\Attribute\Snapshot;
 
 /**
@@ -19,7 +19,7 @@ class SnapshotTest extends TestCase
     {
         $snapshot = new Snapshot();
 
-        $this->assertEquals(['snapshot'], $snapshot->getGroups());
+        $this->assertEquals(['snapshot'], $snapshot->groups);
         $this->assertEquals('', $snapshot->targetSnapshotProperty);
         $this->assertEquals([], $snapshot->context);
         $this->assertTrue($snapshot->cascade);
@@ -34,7 +34,7 @@ class SnapshotTest extends TestCase
             cascade: false
         );
 
-        $this->assertEquals(['custom_group', 'another_group'], $snapshot->getGroups());
+        $this->assertEquals(['custom_group', 'another_group'], $snapshot->groups);
         $this->assertEquals('customSnapshot', $snapshot->targetSnapshotProperty);
         $this->assertEquals(['enable_max_depth' => true], $snapshot->context);
         $this->assertFalse($snapshot->cascade);
@@ -61,13 +61,13 @@ class SnapshotTest extends TestCase
         $snapshot = new Snapshot(['group1', 'group2']);
 
         $this->assertInstanceOf(Groups::class, $snapshot);
-        $this->assertEquals(['group1', 'group2'], $snapshot->getGroups());
+        $this->assertEquals(['group1', 'group2'], $snapshot->groups);
     }
 
     public function testSingleGroupString(): void
     {
         $snapshot = new Snapshot('single_group');
 
-        $this->assertEquals(['single_group'], $snapshot->getGroups());
+        $this->assertEquals(['single_group'], $snapshot->groups);
     }
 }

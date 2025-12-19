@@ -6,7 +6,7 @@ namespace Tourze\DoctrineSnapshotBundle\DependencyInjection;
 
 use Tourze\SymfonyDependencyServiceLoader\AutoExtension;
 
-class DoctrineSnapshotExtension extends AutoExtension
+final class DoctrineSnapshotExtension extends AutoExtension
 {
     protected function getConfigDir(): string
     {

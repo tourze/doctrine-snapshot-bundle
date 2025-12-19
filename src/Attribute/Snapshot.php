@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tourze\DoctrineSnapshotBundle\Attribute;
 
-use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Attribute\Groups;
 
 #[\Attribute(\Attribute::TARGET_PROPERTY | \Attribute::TARGET_METHOD)]
 class Snapshot extends Groups

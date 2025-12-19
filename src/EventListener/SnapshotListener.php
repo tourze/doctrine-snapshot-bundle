@@ -66,7 +66,7 @@ readonly class SnapshotListener
 
             $context = array_merge(
                 $snapshotAttr->context,
-                ['groups' => $snapshotAttr->getGroups()]
+                ['groups' => $snapshotAttr->groups]
             );
 
             $snapshot = $this->snapshotManager->create($sourceEntity, $context);
